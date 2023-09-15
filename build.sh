@@ -1,5 +1,13 @@
 #!/bin/bash
 
+cd myredis
+cargo build
+
+cd ..
+cd proxy
+cargo build
+cd ..
+
 ./myredis/target/debug/server 7000 &
 ./myredis/target/debug/server 7001 &
 ./myredis/target/debug/server 7002 &
